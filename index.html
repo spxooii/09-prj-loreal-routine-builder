@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>L’Oréal Beauty Advisor — Smart Routine & Product Advisor</title>
+
+    <!-- Icons & Fonts -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="merged_style.css" />
+  </head>
+
+  <body>
+    <div class="page-wrapper">
+      <!-- Header / Branding -->
+      <header class="site-header">
+        <img src="loreal-logo.png" alt="L’Oréal Logo" class="loreal-logo" />
+        <h1 class="site-title">Smart Product Advisor</h1>
+      </header>
+
+      <!-- Category Filter -->
+      <div class="search-section">
+        <select id="categoryFilter" aria-label="Choose a product category">
+          <option value="" disabled selected>Choose a Category</option>
+          <option value="cleanser">Cleansers</option>
+          <option value="moisturizer">Moisturizers &amp; Treatments</option>
+          <option value="skincare">Serums &amp; Treatments</option>
+          <option value="haircare">Haircare</option>
+          <option value="makeup">Makeup</option>
+          <option value="hair color">Hair Color</option>
+          <option value="hair styling">Hair Styling</option>
+          <option value="men's grooming">Men's Grooming</option>
+          <option value="suncare">Suncare</option>
+          <option value="fragrance">Fragrance</option>
+        </select>
+      </div>
+
+      <!-- Products Grid -->
+      <div id="productsContainer" class="products-grid"></div>
+
+      <!-- Selected Products (shell only for now) -->
+      <div class="selected-products">
+        <h2>Selected Products</h2>
+        <div id="selectedProductsList"></div>
+        <button id="generateRoutine" class="generate-btn">
+          <i class="fa-solid fa-wand-magic-sparkles"></i> Generate Routine
+        </button>
+      </div>
+
+      <!-- Chat Area -->
+      <main>
+        <section class="chatbox">
+          <!-- Latest question banner (resets each submit) -->
+          <div id="questionBanner" class="question-banner" aria-live="polite" aria-atomic="true"></div>
+
+          <!-- Conversation window -->
+          <div id="chatWindow" class="chat-window" role="log" aria-live="polite" aria-atomic="false"></div>
+
+          <!-- Input row -->
+          <form id="chatForm" class="chat-form" autocomplete="off">
+            <label for="userInput" class="visually-hidden">Message</label>
+            <input
+              id="userInput"
+              name="userInput"
+              type="text"
+              placeholder="Ask me about L’Oréal products or routines…"
+              required
+              aria-label="Message"
+            />
+            <button type="submit" id="sendBtn" aria-label="Send message">
+              <span class="material-icons" aria-hidden="true">send</span>
+              <span class="visually-hidden">Send</span>
+            </button>
+          </form>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="site-footer">
+        <p>&copy; 2025 L’Oréal Beauty Advisor. All rights reserved.</p>
+        <nav>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Contact</a>
+        </nav>
+      </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="merged_script.js"></script>
+  </body>
+</html>
